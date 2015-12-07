@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.coolweather.model.City;
 import com.coolweather.model.County;
 import com.coolweather.model.Province;
+import com.coolweather.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,7 +116,7 @@ public class CoolWeatherDB {
                 City city = new City();
                 city.setId(cursor.getInt(cursor.getColumnIndex("id")));
                 city.setCity_code(cursor.getString(cursor.getColumnIndex("city_code")));
-                city.setCity_name(cursor.getString(cursor.getColumnIndex("City_name")));
+                city.setCity_name(cursor.getString(cursor.getColumnIndex("city_name")));
                 city.setProvince_id(cursor.getInt(cursor.getColumnIndex("province_id")));
                 list.add(city);
             } while (cursor.moveToNext());
